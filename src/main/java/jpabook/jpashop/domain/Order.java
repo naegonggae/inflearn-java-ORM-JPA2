@@ -12,11 +12,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import org.hibernate.annotations.ColumnDefault;
 
 @Entity
-@Table(name = "Orders") // Order 이 예약어로 걸려있는경우가 있음
+@Table(name = "ORDERS") // Order 이 예약어로 걸려있는경우가 있음
 public class Order {
 
 	@Id @GeneratedValue
@@ -34,6 +35,10 @@ public class Order {
 
 	@OneToMany(mappedBy = "order")
 	private List<OrderItem> orderItems = new ArrayList<>();
+
+	@OneToOne
+	@JoinColumn(name = "DELIVERY_ID") // 일대일 주인
+	private Delivery delivery; // FK
 
 	public Long getId() {
 		return id;

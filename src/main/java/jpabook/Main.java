@@ -27,3 +27,4 @@ public class Main {
 		emf.close();
 	}
 }
+// 두번 빌드하면 DDL 오류남...
