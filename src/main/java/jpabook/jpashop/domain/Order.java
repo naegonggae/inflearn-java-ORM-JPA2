@@ -18,7 +18,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 @Entity
 @Table(name = "ORDERS") // Order 이 예약어로 걸려있는경우가 있음
-public class Order {
+public class Order extends BaseEntity {
 
 	@Id @GeneratedValue
 	@Column(name = "ORDER_ID")

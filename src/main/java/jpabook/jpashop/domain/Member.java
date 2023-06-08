@@ -10,7 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Member {
+public class Member extends BaseEntity {
 
 	@Id @GeneratedValue // 오토로 해줌
 	@Column(name = "MEMBER_ID")
